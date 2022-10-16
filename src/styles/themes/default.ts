@@ -5,4 +5,5 @@ export const defaultTheme = {
   'gray-200': '#666',
 
   primary: '#F80032',
+  'primary-dark': '#AB0000',
 }
