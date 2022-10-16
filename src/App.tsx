@@ -3,6 +3,8 @@ import { ThemeProvider } from 'styled-components'
 
 import { Router } from './Router'
 
+import AppProvider from './hooks'
+
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
@@ -10,7 +12,9 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <AppProvider>
+          <Router />
+        </AppProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>
