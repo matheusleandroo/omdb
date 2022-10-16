@@ -1,10 +1,10 @@
 import { useCallback, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
-import { api } from '../services/api'
+import { api } from '../../services/api'
 
-import svgImageNotFound from '../assets/image-not-found.svg'
+import svgImageNotFound from '../../assets/image-not-found.svg'
 
-import { useMovie } from '../hooks/Movie'
+import { useMovie } from '../../hooks/Movie'
 
 export function Details() {
   const { movie, updateMovie } = useMovie()

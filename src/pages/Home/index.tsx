@@ -1,12 +1,14 @@
 import { useCallback } from 'react'
-import { api } from '../services/api'
+import { api } from '../../services/api'
 
-import svgImageNotFound from '../assets/image-not-found.svg'
-import { Paginate } from '../components/Paginate'
-import { NavLink } from 'react-router-dom'
+import { Paginate } from '../../components/Paginate'
 
-import { useMovies } from '../hooks/Movies'
-import { useFilters } from '../hooks/Filters'
+import { useMovies } from '../../hooks/Movies'
+import { useFilters } from '../../hooks/Filters'
+
+import { MovieContent } from '../../components/MovieContent'
+
+import { HomeContainer } from './styles'
 
 export function Home() {
   const { movies, updateMovies } = useMovies()
@@ -27,7 +29,7 @@ export function Home() {
   )
 
   return (
-    <div>
+    <HomeContainer>
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -52,11 +54,7 @@ export function Home() {
         movies.map((movie) => {
           return (
             <div key={movie.imdbID}>
-              <img
-                src={movie.Poster !== 'N/A' ? movie.Poster : svgImageNotFound}
-                alt="Poster do filme"
-              />
-              <NavLink to={`/details/${movie.imdbID}`}>+ info</NavLink>
+              <MovieContent movie={movie} />
             </div>
           )
         })
@@ -71,6 +69,6 @@ export function Home() {
           onPageChange={(selected) => handleSubmit(filters.value, selected)}
         />
       )}
-    </div>
+    </HomeContainer>
   )
 }
