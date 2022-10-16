@@ -9,8 +9,6 @@ export const ListingContainer = styled.div`
   flex-direction: column;
 
   form {
-    background-color: green;
-
     width: 100%;
     display: flex;
     flex-direction: column;
