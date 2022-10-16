@@ -1,37 +1,49 @@
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 import { api } from '../services/api'
 
 import svgImageNotFound from '../assets/image-not-found.svg'
 import { Paginate } from '../components/Paginate'
 import { NavLink } from 'react-router-dom'
 
-import { IMovies } from '../interfaces/IMovies'
+import { useMovies } from '../hooks/Movies'
+import { useFilters } from '../hooks/Filters'
 
 export function Home() {
-  const [input, setInput] = useState<string>('')
-  const [movies, setMovies] = useState<IMovies>([])
-  const [totalPage, setTotalPage] = useState<number>(0)
+  const { movies, updateMovies } = useMovies()
+  const { filters, updateFilters } = useFilters()
 
-  const handleSubmit = useCallback((value: string, page: number) => {
-    api.get(`?apikey=8faa45f8&s=${value}&page=${page}`).then((data) => {
-      setMovies(data.data.Search)
-      setTotalPage(Math.ceil(data.data.totalResults / 10))
-    })
-  }, [])
+  const handleSubmit = useCallback(
+    (value: string, page: number) => {
+      api.get(`?apikey=8faa45f8&s=${value}&page=${page}`).then((data) => {
+        updateMovies(data.data.Search)
+        updateFilters({
+          ...filters,
+          page,
+          totalPage: Math.ceil(data.data.totalResults / 10),
+        })
+      })
+    },
+    [filters, updateFilters, updateMovies],
+  )
 
   return (
     <div>
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          handleSubmit(input, 1)
+          handleSubmit(filters.value, 1)
         }}
       >
         <input
           type="text"
           placeholder="Procure seu Filme"
-          value={input}
-          onChange={(value) => setInput(value.target.value)}
+          value={filters.value}
+          onChange={(value) =>
+            updateFilters({
+              ...filters,
+              value: value.target.value,
+            })
+          }
         />
         <button type="submit">Buscar</button>
       </form>
@@ -54,8 +66,9 @@ export function Home() {
 
       {movies && movies.length > 0 && (
         <Paginate
-          pageCount={totalPage}
-          onPageChange={(selected) => handleSubmit(input, selected)}
+          page={filters.page}
+          pageCount={filters.totalPage}
+          onPageChange={(selected) => handleSubmit(filters.value, selected)}
         />
       )}
     </div>

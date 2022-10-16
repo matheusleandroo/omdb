@@ -1,20 +1,21 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { api } from '../services/api'
 
 import svgImageNotFound from '../assets/image-not-found.svg'
 
-import { IMovie } from '../interfaces/IMovie'
+import { useMovie } from '../hooks/Movie'
 
 export function Details() {
-  const [movie, setMovie] = useState<IMovie>()
+  const { movie, updateMovie } = useMovie()
+
   const { id } = useParams<{ id: string }>()
 
   const getMovie = useCallback(() => {
     api.get(`?apikey=8faa45f8&i=${id}`).then((data) => {
-      setMovie(data.data)
+      updateMovie(data.data)
     })
-  }, [id])
+  }, [id, updateMovie])
 
   useEffect(() => {
     getMovie()
@@ -50,7 +51,9 @@ export function Details() {
             alt="Poster do filme"
           />
 
-          <NavLink to="/">Voltar</NavLink>
+          <NavLink to="/" onClick={() => updateMovie(null)}>
+            Voltar
+          </NavLink>
         </>
       )}
     </>
