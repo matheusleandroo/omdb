@@ -4,6 +4,7 @@ import { MovieContainer } from './styles'
 import svgImageNotFound from '../../assets/image-not-found.svg'
 import { NavLink } from 'react-router-dom'
 import 'reactjs-popup/dist/index.css'
+import { Button } from '../Button'
 
 interface IMovieContent {
   movie: IMovies
@@ -27,7 +28,9 @@ export function MovieContent({ movie }: IMovieContent) {
           <p>Type: {movie.Type}</p>
           <p>imdbID: {movie.imdbID}</p>
 
-          <NavLink to={`/details/${movie.imdbID}`}>+ info</NavLink>
+          <NavLink to={`/details/${movie.imdbID}`}>
+            <Button title="+ info" />
+          </NavLink>
         </div>
       </Popup>
     </MovieContainer>

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../../components/Button'
 import { useFilters } from '../../hooks/Filters'
 
 import { HomeContainer } from './styles'
@@ -27,7 +28,7 @@ export function Home() {
             })
           }
         />
-        <button type="submit">Buscar</button>
+        <Button title="Buscar" />
       </form>
     </HomeContainer>
   )

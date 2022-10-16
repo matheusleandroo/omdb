@@ -5,6 +5,7 @@ import { api } from '../../services/api'
 import svgImageNotFound from '../../assets/image-not-found.svg'
 
 import { useMovie } from '../../hooks/Movie'
+import { Button } from '../../components/Button'
 
 export function Details() {
   const { movie, updateMovie } = useMovie()
@@ -52,7 +53,7 @@ export function Details() {
           />
 
           <NavLink to="/" onClick={() => updateMovie(null)}>
-            Voltar
+            <Button title="Voltar" />
           </NavLink>
         </>
       )}

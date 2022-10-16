@@ -9,6 +9,7 @@ import { useFilters } from '../../hooks/Filters'
 import { MovieContent } from '../../components/MovieContent'
 
 import { ListingContainer } from './styles'
+import { Button } from '../../components/Button'
 
 export function Listing() {
   const { movies, updateMovies } = useMovies()
@@ -52,7 +53,7 @@ export function Listing() {
             })
           }
         />
-        <button type="submit">Buscar</button>
+        <Button title="Buscar" />
       </form>
       {movies && movies.length > 0 ? (
         movies.map((movie) => {
