@@ -5,9 +5,11 @@ import svgImageNotFound from '../assets/image-not-found.svg'
 import { Paginate } from '../components/Paginate'
 import { NavLink } from 'react-router-dom'
 
+import { IMovies } from '../interfaces/IMovies'
+
 export function Home() {
   const [input, setInput] = useState<string>('')
-  const [movies, setMovies] = useState<any[]>([])
+  const [movies, setMovies] = useState<IMovies>([])
   const [totalPage, setTotalPage] = useState<number>(0)
 
   const handleSubmit = useCallback((value: string, page: number) => {

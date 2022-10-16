@@ -4,8 +4,10 @@ import { api } from '../services/api'
 
 import svgImageNotFound from '../assets/image-not-found.svg'
 
+import { IMovie } from '../interfaces/IMovie'
+
 export function Details() {
-  const [movie, setMovie] = useState<any>({})
+  const [movie, setMovie] = useState<IMovie>()
   const { id } = useParams<{ id: string }>()
 
   const getMovie = useCallback(() => {
@@ -26,25 +28,25 @@ export function Details() {
         <p>Carregando</p>
       ) : (
         <>
-          <p>{movie.Title}</p>
-          <p>{movie.Year}</p>
-          <p>{movie.Rated}</p>
-          <p>{movie.Released}</p>
-          <p>{movie.Genre}</p>
-          <p>{movie.Director}</p>
-          <p>{movie.Writer}</p>
-          <p>{movie.Actors}</p>
-          <p>{movie.Plot}</p>
-          <p>{movie.Language}</p>
-          <p>{movie.Country}</p>
-          <p>{movie.Awards}</p>
-          <p>{movie.Metascore}</p>
-          <p>{movie.imdbRating}</p>
-          <p>{movie.imdbVotes}</p>
-          <p>{movie.Type}</p>
-          <p>{movie.imdbID}</p>
+          <p>{movie?.Title}</p>
+          <p>{movie?.Year}</p>
+          <p>{movie?.Rated}</p>
+          <p>{movie?.Released}</p>
+          <p>{movie?.Genre}</p>
+          <p>{movie?.Director}</p>
+          <p>{movie?.Writer}</p>
+          <p>{movie?.Actors}</p>
+          <p>{movie?.Plot}</p>
+          <p>{movie?.Language}</p>
+          <p>{movie?.Country}</p>
+          <p>{movie?.Awards}</p>
+          <p>{movie?.Metascore}</p>
+          <p>{movie?.imdbRating}</p>
+          <p>{movie?.imdbVotes}</p>
+          <p>{movie?.Type}</p>
+          <p>{movie?.imdbID}</p>
           <img
-            src={movie.Poster !== 'N/A' ? movie.Poster : svgImageNotFound}
+            src={movie?.Poster !== 'N/A' ? movie?.Poster : svgImageNotFound}
             alt="Poster do filme"
           />
 
