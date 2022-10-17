@@ -12,6 +12,10 @@ export const FormContainer = styled.form<IFormProps>`
   justify-content: center;
   flex-direction: column;
 
+  @media (min-width: 768px) {
+    padding: 30px 15px;
+  }
+
   h1 {
     color: ${(props) => props.theme.primary};
     font-weight: bold;
