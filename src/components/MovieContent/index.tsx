@@ -26,16 +26,16 @@ export function MovieContent({ movie }: IMovieContent) {
       >
         <MovieInfos>
           <p>
-            <strong>Title</strong>: {movie.Title}
+            <strong>Título</strong>: {movie.Title}
           </p>
           <p>
-            <strong>Year</strong>: {movie.Year}
+            <strong>Ano</strong>: {movie.Year}
           </p>
           <p>
-            <strong>Type</strong>: {movie.Type}
+            <strong>Tipo</strong>: {movie.Type}
           </p>
           <p>
-            <strong>imdbID</strong>: {movie.imdbID}
+            <strong>ID</strong>: {movie.imdbID}
           </p>
 
           <NavLink to={`/details/${movie.imdbID}`}>

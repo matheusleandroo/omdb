@@ -39,51 +39,51 @@ export function Details() {
           <h1>Informações sobre {movie?.Title}</h1>
 
           <p>
-            <strong>Title: </strong>
+            <strong>Título: </strong>
             {movie?.Title}
           </p>
           <p>
-            <strong>Year: </strong>
+            <strong>Ano: </strong>
             {movie?.Year}
           </p>
           <p>
-            <strong>Rated: </strong>
+            <strong>Classificação: </strong>
             {movie?.Rated}
           </p>
           <p>
-            <strong>Released: </strong>
+            <strong>Lançamento: </strong>
             {movie?.Released}
           </p>
           <p>
-            <strong>Genre: </strong>
+            <strong>Gênero: </strong>
             {movie?.Genre}
           </p>
           <p>
-            <strong>Director: </strong>
+            <strong>Diretor: </strong>
             {movie?.Director}
           </p>
           <p>
-            <strong>Writer: </strong>
+            <strong>Escritor: </strong>
             {movie?.Writer}
           </p>
           <p>
-            <strong>Actors: </strong>
+            <strong>Atores: </strong>
             {movie?.Actors}
           </p>
           <p>
-            <strong>Plot: </strong>
+            <strong>Enredo: </strong>
             {movie?.Plot}
           </p>
           <p>
-            <strong>Language: </strong>
+            <strong>Idioma: </strong>
             {movie?.Language}
           </p>
           <p>
-            <strong>Country: </strong>
+            <strong>País: </strong>
             {movie?.Country}
           </p>
           <p>
-            <strong>Awards: </strong>
+            <strong>Prêmios: </strong>
             {movie?.Awards}
           </p>
           <p>
@@ -91,19 +91,19 @@ export function Details() {
             {movie?.Metascore}
           </p>
           <p>
-            <strong>imdbRating: </strong>
+            <strong>Avaliação do imdb: </strong>
             {movie?.imdbRating}
           </p>
           <p>
-            <strong>imdbVotes: </strong>
+            <strong>Votos do imdb: </strong>
             {movie?.imdbVotes}
           </p>
           <p>
-            <strong>Type: </strong>
+            <strong>Tipo: </strong>
             {movie?.Type}
           </p>
           <p>
-            <strong>imdbID: </strong>
+            <strong>ID: </strong>
             {movie?.imdbID}
           </p>
           <DetailsImg>
