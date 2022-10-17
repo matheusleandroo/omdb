@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import ReactPaginate from 'react-paginate'
 
 export const Container = styled.div`
-  margin: 2.5rem 0 1.5rem;
+  margin: 2.5rem 0 0;
 
   ul {
     display: flex;

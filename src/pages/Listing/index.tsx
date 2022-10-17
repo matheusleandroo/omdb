@@ -9,7 +9,7 @@ import { useFilters } from '../../hooks/Filters'
 import { MovieContent } from '../../components/MovieContent'
 
 import { Form } from '../../components/Form'
-import { ListingContainer, ListingContent } from './styles'
+import { ListingContent } from './styles'
 
 export function Listing() {
   const { movies, updateMovies } = useMovies()
@@ -39,7 +39,7 @@ export function Listing() {
   }, [])
 
   return (
-    <ListingContainer>
+    <>
       <Form
         largeTitle={false}
         onSubmit={() => handleSubmit(filters.value, 1)}
@@ -66,6 +66,6 @@ export function Listing() {
           />
         )}
       </ListingContent>
-    </ListingContainer>
+    </>
   )
 }

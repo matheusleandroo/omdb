@@ -7,6 +7,7 @@ interface ContainerProps {
 export const InputContainer = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   label,
   input,

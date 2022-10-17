@@ -7,7 +7,7 @@ import svgImageNotFound from '../../assets/image-not-found.svg'
 import { useMovie } from '../../hooks/Movie'
 import { Button } from '../../components/Button'
 
-import { DetailsContainer, DetailsContent, DetailsImg } from './styles'
+import { DetailsContent, DetailsImg } from './styles'
 
 export function Details() {
   const { movie, updateMovie } = useMovie()
@@ -22,10 +22,14 @@ export function Details() {
 
   useEffect(() => {
     getMovie()
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
   }, [getMovie])
 
   return (
-    <DetailsContainer>
+    <>
       {movie &&
       Object.keys(movie).length === 0 &&
       Object.getPrototypeOf(movie) === Object.prototype ? (
@@ -114,6 +118,6 @@ export function Details() {
           </NavLink>
         </DetailsContent>
       )}
-    </DetailsContainer>
+    </>
   )
 }

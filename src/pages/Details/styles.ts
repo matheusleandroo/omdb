@@ -1,22 +1,5 @@
 import styled from 'styled-components'
 
-export const DetailsContainer = styled.div`
-  background-color: ${(props) => props.theme.white};
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 700px;
-  margin: 50px 25px;
-  padding: 25px;
-  overflow-y: auto;
-
-  @media (min-width: 768px) {
-    margin: 50px auto;
-  }
-`
-
 export const DetailsContent = styled.div`
   h1 {
     color: ${(props) => props.theme.primary};
@@ -29,6 +12,7 @@ export const DetailsContent = styled.div`
   }
 
   img {
+    margin: 2rem 0 2rem;
     height: 350px;
     max-width: 250px;
   }
