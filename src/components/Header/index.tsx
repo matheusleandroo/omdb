@@ -14,6 +14,7 @@ export function Header() {
           updateFilters({
             ...filters,
             value: '',
+            page: 1,
           })
         }
       >
