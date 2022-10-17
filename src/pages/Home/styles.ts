@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
-  width: 100%;
-  min-height: 100%;
+  background-color: ${(props) => props.theme.white};
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  max-width: 700px;
+  height: -webkit-fill-available;
+  margin: 50px 25px;
+  padding: 25px;
+  overflow-y: auto;
 
-  form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  @media (min-width: 768px) {
+    margin: 50px auto;
+    padding: 75px;
   }
 `
