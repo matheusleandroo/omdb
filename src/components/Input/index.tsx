@@ -7,6 +7,8 @@ import {
   FieldErrorsImpl,
 } from 'react-hook-form'
 
+import { InputContainer } from './styles'
+
 interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegister<FieldValues>
   error: FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined
@@ -26,7 +28,7 @@ export function Input({
   ...inputProps
 }: IInput) {
   return (
-    <>
+    <InputContainer isErrored={!!error}>
       {label && <label htmlFor={id}>{label}</label>}
       <input
         {...register(id, {
@@ -38,6 +40,6 @@ export function Input({
         {...inputProps}
       />
       {error && <span>Campo obrigatótio</span>}
-    </>
+    </InputContainer>
   )
 }
