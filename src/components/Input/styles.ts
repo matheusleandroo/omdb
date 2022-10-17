@@ -20,7 +20,7 @@ export const InputContainer = styled.div<ContainerProps>`
   }
 
   input {
-    border-radius: 0.75rem;
+    border-radius: 0.3rem;
     height: 2.375rem;
     border: 1px solid ${(props) => props.theme['gray-200']};
 
