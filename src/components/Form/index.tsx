@@ -1,5 +1,4 @@
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
-import { DevTool } from '@hookform/devtools'
 
 import { Button } from '../Button'
 import { Input } from '../Input'
@@ -16,7 +15,6 @@ export function Form({ onSubmit }: IForm) {
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
@@ -40,7 +38,6 @@ export function Form({ onSubmit }: IForm) {
         error={errors.title}
       />
       <Button title="Buscar" />
-      <DevTool control={control} />
     </form>
   )
 }
