@@ -9,6 +9,8 @@ export const HeaderContainer = styled.header`
   font-size: 2rem;
   position: fixed;
   width: 100vw;
+  height: 75px;
+  z-index: 1000;
 
   a {
     text-decoration: none;
