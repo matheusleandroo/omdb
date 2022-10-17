@@ -20,7 +20,7 @@ export const FormContainer = styled.form<IFormProps>`
     color: ${(props) => props.theme.primary};
     font-weight: bold;
     margin-bottom: ${(props) => (props.largeTitle ? '4rem' : '1.5rem')};
-    font-size: ${(props) => (props.largeTitle ? 'default' : '1.5rem')};
+    font-size: ${(props) => (props.largeTitle ? 'reverse' : '1.5rem')};
 
     @media (max-height: 576px) {
       margin-bottom: 1.5rem;
