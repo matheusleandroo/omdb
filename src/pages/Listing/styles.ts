@@ -1,16 +1,27 @@
 import styled from 'styled-components'
 
 export const ListingContainer = styled.div`
-  width: 100%;
-  min-height: 100%;
+  background-color: ${(props) => props.theme.white};
+  border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  max-width: 700px;
+  margin: 50px 25px;
+  padding: 25px;
+  overflow-y: auto;
 
-  form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  @media (min-width: 768px) {
+    margin: 50px auto;
+  }
+`
+
+export const ListingContent = styled.div`
+  margin-top: 2.5rem;
+
+  h3 {
+    color: ${(props) => props.theme['primary-dark']};
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 `
