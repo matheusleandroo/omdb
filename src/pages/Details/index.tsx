@@ -52,7 +52,7 @@ export function Details() {
             alt="Poster do filme"
           />
 
-          <NavLink to="/" onClick={() => updateMovie(null)}>
+          <NavLink to="/listing" onClick={() => updateMovie(null)}>
             <Button title="Voltar" />
           </NavLink>
         </>
