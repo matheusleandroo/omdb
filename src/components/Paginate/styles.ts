@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import ReactPaginate from 'react-paginate'
 
 export const Container = styled.div`
-  margin-bottom: 3rem;
+  margin: 2.5rem 0 1.5rem;
+
   ul {
     display: flex;
     align-items: center;
@@ -28,7 +29,7 @@ export const Container = styled.div`
       }
     }
     li:hover {
-      background-color: ${(props) => props.theme['gray-100']};
+      background-color: ${(props) => props.theme['primary-dark']};
       font-weight: bold;
     }
   }
