@@ -9,7 +9,7 @@ import { useFilters } from '../../hooks/Filters'
 import { MovieContent } from '../../components/MovieContent'
 
 import { ListingContainer } from './styles'
-import { Button } from '../../components/Button'
+import { Form } from '../../components/Form'
 
 export function Listing() {
   const { movies, updateMovies } = useMovies()
@@ -36,25 +36,8 @@ export function Listing() {
 
   return (
     <ListingContainer>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          handleSubmit(filters.value, 1)
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Procure seu Filme"
-          value={filters.value}
-          onChange={(value) =>
-            updateFilters({
-              ...filters,
-              value: value.target.value,
-            })
-          }
-        />
-        <Button title="Buscar" />
-      </form>
+      <Form onSubmit={() => handleSubmit(filters.value, 1)} />
+
       {movies && movies.length > 0 ? (
         movies.map((movie) => {
           return (
