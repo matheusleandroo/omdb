@@ -30,7 +30,7 @@ export function Listing() {
   )
 
   useEffect(() => {
-    handleSubmit(filters.value, 1)
+    handleSubmit(filters.value, filters.page)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

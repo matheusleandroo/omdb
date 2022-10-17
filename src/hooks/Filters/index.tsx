@@ -20,7 +20,7 @@ const FiltersContext = createContext<FiltersContextData>(
 const FiltersProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [filters, setFilters] = useState<IFilters>({
     value: '',
-    page: 0,
+    page: 1,
     totalPage: 0,
   })
 
