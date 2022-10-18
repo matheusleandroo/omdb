@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`should be able to render a button component 1`] = `
+<button
+  className="sc-bcXHqe XrTGf"
+>
+  Test
+</button>
+`;
