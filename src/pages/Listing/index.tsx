@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { api } from '../../services/api'
 
 import { Paginate } from '../../components/Paginate'
@@ -16,7 +17,7 @@ export function Listing() {
   const { filters, updateFilters } = useFilters()
 
   const handleSubmit = useCallback(
-    (value: string, page: number) => {
+    (value: string, page: number, showToast: boolean) => {
       api.get(`?apikey=8faa45f8&s=${value}&page=${page}`).then((data) => {
         updateMovies(data.data.Search)
         updateFilters({
@@ -24,6 +25,17 @@ export function Listing() {
           page,
           totalPage: Math.ceil(data.data.totalResults / 10),
         })
+        if (showToast) {
+          if (data.data.Response === 'True') {
+            toast('Pesquisa realizada com sucesso', {
+              type: 'info',
+            })
+          } else {
+            toast('Nenhum resultado encontrado', {
+              type: 'warning',
+            })
+          }
+        }
       })
       window.scrollTo({
         top: 0,
@@ -34,7 +46,7 @@ export function Listing() {
   )
 
   useEffect(() => {
-    handleSubmit(filters.value, filters.page)
+    handleSubmit(filters.value, filters.page, true)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -42,7 +54,7 @@ export function Listing() {
     <>
       <Form
         largeTitle={false}
-        onSubmit={() => handleSubmit(filters.value, 1)}
+        onSubmit={() => handleSubmit(filters.value, 1, true)}
       />
 
       <ListingContent>
@@ -62,7 +74,9 @@ export function Listing() {
           <Paginate
             page={filters.page}
             pageCount={filters.totalPage}
-            onPageChange={(selected) => handleSubmit(filters.value, selected)}
+            onPageChange={(selected) =>
+              handleSubmit(filters.value, selected, false)
+            }
           />
         )}
       </ListingContent>
