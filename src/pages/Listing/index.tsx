@@ -18,7 +18,7 @@ export function Listing() {
 
   const handleSubmit = useCallback(
     (value: string, page: number, showToast: boolean) => {
-      api.get(`?apikey=8faa45f8&s=${value}&page=${page}`).then((data) => {
+      api.get(`?s=${value}&page=${page}`).then((data) => {
         updateMovies(data.data.Search)
         updateFilters({
           ...filters,
