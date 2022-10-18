@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 interface IFormProps {
   largeTitle: boolean
+  isHome: boolean
 }
 
 export const FormContainer = styled.form<IFormProps>`
@@ -26,6 +27,22 @@ export const FormContainer = styled.form<IFormProps>`
       margin-bottom: 1.5rem;
       font-size: 1.5rem;
     }
+
+    ${(props) =>
+      !props.isHome &&
+      css`
+        animation-name: updateMargin;
+        animation-duration: 1.5s;
+
+        @keyframes updateMargin {
+          from {
+            margin-bottom: 4rem;
+          }
+          to {
+            margin-bottom: 1.5rem;
+          }
+        }
+      `}
   }
 
   button {

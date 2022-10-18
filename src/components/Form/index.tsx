@@ -12,9 +12,10 @@ import { useEffect } from 'react'
 interface IForm {
   onSubmit: SubmitHandler<FieldValues>
   largeTitle?: boolean
+  isHome?: boolean
 }
 
-export function Form({ onSubmit, largeTitle = true }: IForm) {
+export function Form({ onSubmit, largeTitle = true, isHome = true }: IForm) {
   const { filters, updateFilters } = useFilters()
 
   const {
@@ -33,7 +34,11 @@ export function Form({ onSubmit, largeTitle = true }: IForm) {
   }, [setFocus])
 
   return (
-    <FormContainer largeTitle={largeTitle} onSubmit={handleSubmit(onSubmit)}>
+    <FormContainer
+      largeTitle={largeTitle}
+      isHome={isHome}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <h1>Pesquise suas séries e filmes favoritos</h1>
       <Input
         id="title"
