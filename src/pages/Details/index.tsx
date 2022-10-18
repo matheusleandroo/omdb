@@ -15,7 +15,7 @@ export function Details() {
   const { id } = useParams<{ id: string }>()
 
   const getMovie = useCallback(() => {
-    api.get(`?apikey=8faa45f8&i=${id}`).then((data) => {
+    api.get(`?i=${id}`).then((data) => {
       updateMovie(data.data)
     })
   }, [id, updateMovie])
