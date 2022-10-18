@@ -2,7 +2,7 @@
   OMDb
 </h1>
 
-<h5 align="center">:exclamation: This project is online at <a href="https://event-platform-roan.vercel.app/">here</a> :scream:</h5>
+<h5 align="center">:exclamation: This project is online at <a href="https://omdb-delta.vercel.app/">here</a> :scream:</h5>
 
 <h3 align="center">
   Simple project to consume the OMDb API.
