@@ -6,6 +6,7 @@ import svgImageNotFound from '../../assets/image-not-found.svg'
 
 import { useMovie } from '../../hooks/Movie'
 import { Button } from '../../components/Button'
+import { Spinner } from '../../components/Spinner'
 
 import { DetailsContent, DetailsImg } from './styles'
 
@@ -30,10 +31,10 @@ export function Details() {
 
   return (
     <>
-      {movie &&
-      Object.keys(movie).length === 0 &&
-      Object.getPrototypeOf(movie) === Object.prototype ? (
-        <p>Carregando</p>
+      {!movie ? (
+        <DetailsContent>
+          <Spinner isLoading />
+        </DetailsContent>
       ) : (
         <DetailsContent>
           <h1>Informações sobre {movie?.Title}</h1>
