@@ -1,13 +1,13 @@
+import { useEffect } from 'react'
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { FiSearch } from 'react-icons/fi'
+
+import { useFilters } from '../../hooks/Filters'
 
 import { Button } from '../Button'
 import { Input } from '../Input'
 
-import { useFilters } from '../../hooks/Filters'
-
 import { FormContainer } from './styles'
-import { useEffect } from 'react'
 
 interface IForm {
   onSubmit: SubmitHandler<FieldValues>

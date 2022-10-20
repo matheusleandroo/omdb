@@ -1,12 +1,14 @@
 import { useCallback, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
+
 import { api } from '../../services/api'
 
-import svgImageNotFound from '../../assets/image-not-found.svg'
-
 import { useMovie } from '../../hooks/Movie'
+
 import { Button } from '../../components/Button'
 import { Spinner } from '../../components/Spinner'
+
+import svgImageNotFound from '../../assets/image-not-found.svg'
 
 import { DetailsContent, DetailsImg } from './styles'
 

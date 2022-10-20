@@ -1,15 +1,15 @@
 import { useCallback, useEffect } from 'react'
 import { toast } from 'react-toastify'
-import { api } from '../../services/api'
 
-import { Paginate } from '../../components/Paginate'
+import { api } from '../../services/api'
 
 import { useMovies } from '../../hooks/Movies'
 import { useFilters } from '../../hooks/Filters'
 
+import { Paginate } from '../../components/Paginate'
 import { MovieContent } from '../../components/MovieContent'
-
 import { Form } from '../../components/Form'
+
 import { ListingContent } from './styles'
 
 export function Listing() {

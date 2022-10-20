@@ -1,6 +1,6 @@
 import HashLoader from 'react-spinners/HashLoader'
-import { defaultTheme } from '../../styles/themes/default'
 
+import { defaultTheme } from '../../styles/themes/default'
 import { SpinnerContainer } from './styles'
 
 interface ISpinner {

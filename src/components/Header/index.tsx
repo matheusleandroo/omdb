@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+
 import { useFilters } from '../../hooks/Filters'
 
 import { HeaderContainer } from './styles'

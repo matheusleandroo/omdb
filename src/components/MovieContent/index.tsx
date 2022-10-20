@@ -1,11 +1,15 @@
 import Popup from 'reactjs-popup'
-import { IMovies } from '../../interfaces/IMovies'
-import { MovieContainer, MovieInfos } from './styles'
-import svgImageNotFound from '../../assets/image-not-found.svg'
 import { NavLink } from 'react-router-dom'
-import 'reactjs-popup/dist/index.css'
-import { Button } from '../Button'
 import { FiPlus } from 'react-icons/fi'
+
+import { Button } from '../Button'
+
+import { IMovies } from '../../interfaces/IMovies'
+
+import svgImageNotFound from '../../assets/image-not-found.svg'
+
+import { MovieContainer, MovieInfos } from './styles'
+import 'reactjs-popup/dist/index.css'
 
 interface IMovieContent {
   movie: IMovies
