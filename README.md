@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 <h4>NodeJS</h4>
 
-You need to install NodeJS on your computer before you can use "**OMDb**". You can install NodeJS by following <a href="https://nodejs.org/en/download/package-manager/">these instructions</a>.
+You need to install NodeJS (>=16.6.1) on your computer before you can use "**OMDb**". You can install NodeJS by following <a href="https://nodejs.org/en/download/package-manager/">these instructions</a>.
 
 Once you have completed the installation process, try typing **```npm -v```** into your command line. You should get a response with the version of NodeJS.
 
@@ -40,6 +40,7 @@ Now you can use from your browser "**OMDb**".
 <ul>
   <li>ReactJS + TypeScript</li>
   <li>Vite</li>
+  <li>Context API</li>
   <li>React Hook Form</li>
   <li>Styled Components</li>
   <li>ESLint</li>
